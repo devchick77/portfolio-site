@@ -1,0 +1,26 @@
+.headline {
+	font-family: 'Oswald';
+	font-size: 80px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #50829F;
+	margin-top: 20%;
+}
+
+.nav-brand {
+	font-family: 'Lato';
+	font-weight: 400;
+
+}
+
+.fancy-body {
+	font-family: 'Lato';
+	font-weight: 300;
+	font-size: 24px;
+	color: grey;
+}
+.blue-body {
+	font-family: 'Lato';
+	font-weight: 300;
+	color: #50829F;
+}
