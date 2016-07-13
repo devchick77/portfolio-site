@@ -1,6 +1,6 @@
 .headline {
 	font-family: 'Oswald';
-	font-size: 80px;
+	font-size: 70px;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: #50829F;
@@ -16,11 +16,23 @@
 .fancy-body {
 	font-family: 'Lato';
 	font-weight: 300;
-	font-size: 24px;
+	font-size: 20px;
 	color: grey;
 }
 .blue-body {
 	font-family: 'Lato';
 	font-weight: 300;
 	color: #50829F;
+}
+
+.employerTitle {
+	font-family: 'Lato';
+	font-weight: 300;
+	font-size: 28px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+body {
+	font-family: 'Lato';
 }
