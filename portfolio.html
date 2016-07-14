@@ -37,12 +37,480 @@
 </nav>
 
 <div class="container">
+<h1 class="page-head">Portfolio</h1>
+     <div class="row">
+  <div class="col-md-12">
+  <h3 class="employerTitle">The Spokesman-Review</h3>
+  </div>
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/hoopfest-preview.png" style="width:150px; height:275px">
+        <h4><b>Hoopfest by the numbers</b></h4>
+        <div class="caption" style="margin-top: 10px">
+          <p>I worked with a reporter to style several statistics about an annual basketball tournament for this A1 design. I also designed an animated web version: <a href="http://www.spokesman.com/hoopfest-bythenumbers-2016/">Hoopfest by the numbers</a></p>
+        <button type="button" class="btn btn-info btn-sm" id="hoopfestBtn">View larger</button>
+            <!-- Baby room modal -->
+            <div class="modal fade" id="hoopfest" role="dialog">
+              <div class="modal-dialog">
+              <!-- Baby room large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Hoopfest by the numbers</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="http://tysonbird.com/portfolio/hoopfest.png" style="width:100%">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/heylman-preview.png" style="width:150px; height:275px">
+        <div class="caption">
+          <h4><b>Heylman architecture</b></h4>
+          <p>I worked with a reporter and archived images to create the illustrations and map on this page. I also created an <a href="http://www.spokesman.com/stories/2016/jul/10/warren-heylman-spokane-architecture/">interactive map</a> of the architect's buildings with Spokesman-Review archive photos</p>
+        <button type="button" class="btn btn-info btn-sm" id="heylmanBtn">View larger</button>
+            <!-- Heylman modal -->
+            <div class="modal fade" id="heylman" role="dialog">
+              <div class="modal-dialog">
+              <!-- Heylman large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Heylman architecture</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="http://tysonbird.com/portfolio/heylman.png" style="width:100%">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/discipline-preview.png" style="width:100px; height:200px">
+        <div class="caption">
+          <h4><b>Discipline rates</b></h4>
+          <p><a href="http://www.spokesman.com/stories/2016/may/22/spokane-public-schools-tries-active-but-patient-ap/">To accompany a story about discipline rates</a> in Spokane public schools, I created an interactive allowing a reader to choose a student category and view the discipline rates for that race in each Spokane County school district.</p>
+        <button type="button" class="btn btn-info btn-sm" id="disciplineBtn">View larger</button>
+            <!-- Heylman modal -->
+            <div class="modal fade" id="discipline" role="dialog">
+              <div class="modal-dialog">
+              <!-- Heylman large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Discipline rates widget</h4>
+                  </div>
+                  <div class="modal-body">
+                            <link href='https://fonts.googleapis.com/css?family=Montserrat:400, 700' rel='stylesheet' type='text/css'>
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+                            google.charts.load('current', {
+                            packages: ['corechart', 'bar']
+                            });
+
+                            google.charts.setOnLoadCallback(drawIndianAlaskan);
+
+                              function drawIndianAlaskan() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', 1.9, 'color: #cc8ad8'],
+                                  ['Seattle', 2, '#dd1818'],
+                                  ['Central Valley', 1.9, '#f5c753'],
+                                  ['Cheney', 1.2, '#552a31'],
+                                  ['Mead', 0, '#00d2ff'],
+                                  ['State', 1.9, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'American Indian/Alaska native',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function drawAsian() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', .4, 'color: #cc8ad8'],
+                                  ['Seattle', .5, '#dd1818'],
+                                  ['Central Valley', 0, '#f5c753'],
+                                  ['Cheney', 0, '#552a31'],
+                                  ['Mead', 0, '#00d2ff'],
+                                  ['State', .3, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'Asian',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function drawBlack() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', 1.9, 'color: #cc8ad8'],
+                                  ['Seattle', 2.5, '#dd1818'],
+                                  ['Central Valley', 2.2, '#f5c753'],
+                                  ['Cheney', 1.5, '#552a31'],
+                                  ['Mead', 2.3, '#00d2ff'],
+                                  ['State', 2.2, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'Black/African American',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function drawHispanic() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', 1.3, 'color: #cc8ad8'],
+                                  ['Seattle', 1.3, '#dd1818'],
+                                  ['Central Valley', 1.2, '#f5c753'],
+                                  ['Cheney', .8, '#552a31'],
+                                  ['Mead', 1.3, '#00d2ff'],
+                                  ['State', 1.2, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'Hispanic/Latino',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function drawWhite() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', .9, 'color: #cc8ad8'],
+                                  ['Seattle', .5, '#dd1818'],
+                                  ['Central Valley', .9, '#f5c753'],
+                                  ['Cheney', 1, '#552a31'],
+                                  ['Mead', .9, '#00d2ff'],
+                                  ['State', .9, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'White',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function draw504() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', 3.1, 'color: #cc8ad8'],
+                                  ['Seattle', 1.2, '#dd1818'],
+                                  ['Central Valley', 1.5, '#f5c753'],
+                                  ['Cheney', 2.7, '#552a31'],
+                                  ['Mead', 2.5, '#00d2ff'],
+                                  ['State', 1.7, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: '504*',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: {title: 'A 504 Plan ensures that a child who has a disability identified under the law receives accomodations that will ensure their academic success and access to the learning environment', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 80, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function drawLIncome() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', 1.5, 'color: #cc8ad8'],
+                                  ['Seattle', 1.8, '#dd1818'],
+                                  ['Central Valley', 1.7, '#f5c753'],
+                                  ['Cheney', 1.3, '#552a31'],
+                                  ['Mead', 1.7, '#00d2ff'],
+                                  ['State', 1.5, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'Low income',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+
+                              function drawSEdu() {
+                                var data = new google.visualization.DataTable();
+                                data.addColumn('string', 'District');
+                                data.addColumn('number', 'Index');
+                                data.addColumn({
+                                  type: 'string',
+                                  role: 'style'
+                                });
+                                data.addRows([
+                                  ['Spokane', 1.7, 'color: #cc8ad8'],
+                                  ['Seattle', 2.2, '#dd1818'],
+                                  ['Central Valley', 2.6, '#f5c753'],
+                                  ['Cheney', 1.7, '#552a31'],
+                                  ['Mead', 2.6, '#00d2ff'],
+                                  ['State', 2, '#009628']
+                                ]);
+
+                                var view = new google.visualization.DataView(data);
+                                view.setColumns([0, 1, {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                  },
+                                  2
+                                ]);
+                                
+                                var options = {width: 350, height: 300, legend: {position: 'none', maxLines: 3},
+                                  title: 'Special education',
+                                  titleTextStyle: {fontSize: 14,},
+                                  vAxis: {title: 'Index', fontSize: 10, viewWindow: {min: 0, max: 3.5}, ticks: [0, .5, 1, 1.5, 2, 2.5, 3, 3.5],},
+                                  hAxis: { titlePosition: 'none', fontSize: 10, textPosition: 'none'}, fontName: 'Montserrat', fontSize: 12, chartArea: {left: 65, right: 25, top: 50, bottom: 30, width: 350},
+                                };
+
+                                var chart = new google.visualization.ColumnChart(
+                                  document.getElementById('chart_div'));
+
+                                chart.draw(view, options);
+                              }
+                            </script>
+                            <div style="font-family: Montserrat; font-size: 12pt; float: left; margin-right: 10px; max-width: 350px;">
+                             <hr />
+                            <h3>Disproportionate discipline</h3>
+                            <p>The composition index measures whether grouping of students are suspended/expelled at a rate proportionate to their representation in the total population. Numbers greater than one mean members of the group are suspended/expelled more often than their representation in the general population.</p>
+                            <p>Click the buttons to explore the index of discipline in select school districts by student category</p>
+                            <button onclick="drawIndianAlaskan()">American Indian/Alaska native</button>
+                            <button onclick="drawAsian()">Asian</button>
+                            <button onclick="drawBlack()">Black/African American</button>
+                            <button onclick="drawHispanic()">Hispanic/Latino</button>
+                            <button onclick="drawWhite()">White</button>
+                            <button onclick="draw504()">504</button>
+                            <button onclick="drawLIncome()">Low income</button>
+                            <button onclick="drawSEdu()">Special education</button>
+                            <h5 style="font-size: 15pt"><b>Index of discipline in select school districts, by student category</b></h5>
+                            <p style="font-size: 12pt"><i>Out-of-school short and long term suspensions and expulsions</i></p>
+                            <table>
+                            <tr><td style="background-color:#cc8ad8;">&nbsp;&nbsp;&nbsp;</td><td style="padding-left: 5px; padding-right: 5px;">Spokane</td><td style="background-color:#dd1818;">&nbsp;&nbsp;&nbsp;</td><td style="padding-left: 5px; padding-right: 5px;">Seattle</td><td style="background-color:#f5c753">&nbsp;&nbsp;&nbsp;</td><td style="padding-left: 5px; padding-right: 5px;">Central Valley</td></tr>
+                            <tr><td style="background-color:#552a31">&nbsp;&nbsp;&nbsp;</td><td style="padding-left: 5px; padding-right: 5px;">Cheney</td><td style="background-color:#00d2ff;">&nbsp;&nbsp;&nbsp;</td><td style="padding-left: 5px; padding-right: 5px;">Mead</td><td style="background-color:#009628">&nbsp;&nbsp;&nbsp;</td><td style="padding-left: 5px; padding-right: 5px;">State</td></tr>
+                            </table>
+                            <div id="chart_div"></div>
+                            <table>
+                            <tr><td>SOURCE: Washington State Office of Superintendent of Public Instruction</td></tr>
+                            <tr><td style="text-align: right"><b>MOLLY QUINN and TYSON BIRD</b></td></tr>
+                            <tr><td style="text-align: right">molly@spokesman.com and tysonb@spokesman.com</td></tr>
+                            </table>
+                            </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div> 
+  <div class="row" style="margin-top: 10px">
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/issues-grid-preview.png" style="width:230px; height:150px">
+        <h4><b>Election issues grid</b></h4>
+        <div class="caption" style="margin-top: 10px">
+          <p>An ongoing series with the Spokesman, I developed an HTML/CSS template to present comparisons of candidates in the 2016 Washington primary election. Reporters would send me information to place in the grid and I styled photos and characters to represent the candidates.</a></p>
+          <a href="http://www.spokesman.com/elections/issues-housedist6-2016/" class="btn btn-info btn-sm">View on Spokesman.com</a>
+<!--         <button type="button" class="btn btn-info btn-sm">View on Spokesman.com</button>
+ -->            <!-- Baby room modal -->
+            <div class="modal fade" id="issues" role="dialog">
+              <div class="modal-dialog">
+              <!-- Baby room large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Hoopfest by the numbers</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="http://tysonbird.com/portfolio/hoopfest.png" style="width:100%">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+<hr>
   <div class="row">
   <div class="col-md-12">
   <h3 class="employerTitle">CNHI - Anderson, Ind. Design Center</h3>
   </div>
       <div class="col-sm-4" style="margin-top: 10px">
-        <img src="http://tysonbird.com/portfolio/baby-room.png" style="width:150px; height:275px">
+        <img src="http://tysonbird.com/portfolio/baby-room-preview.png" style="width:150px; height:275px">
         <h4><b>Baby room</b></h4>
         <div class="caption" style="margin-top: 10px">
           <p>Sunday section front about trends for decorating a nursery. I was responsible for choosing from provided art and styling type.</p>
@@ -68,7 +536,7 @@
           </div>
       </div>
       <div class="col-sm-4" style="margin-top: 10px">
-        <img src="http://tysonbird.com/portfolio/for-the-birds.png" style="width:150px; height:275px">
+        <img src="http://tysonbird.com/portfolio/for-the-birds-preview.png" style="width:150px; height:275px">
         <div class="caption">
           <h4><b>For the birds</b></h4>
           <p>Sunday section front about making your own bird feeder. I was responsible for pairing stock art with reporter photos, and logically designing the page to include the how-to.</p>
@@ -94,7 +562,7 @@
           </div>
       </div>
       <div class="col-sm-4" style="margin-top: 10px">
-        <img src="http://tysonbird.com/portfolio/hopping-traditions.png" style="width:150px; height:275px">
+        <img src="http://tysonbird.com/portfolio/hopping-traditions-preview.png" style="width:150px; height:275px">
         <div class="caption">
           <h4><b>Hopping traditions</b></h4>
           <p>This page had zero provided art, but was a local history of Easter traditions. I found stock art and styled the type to accompany the story.</p>
@@ -120,7 +588,95 @@
           </div>
       </div>
   </div>
-</div>
+<hr>
+    <div class="row">
+  <div class="col-md-12">
+  <h3 class="employerTitle">Ball State Daily</h3>
+  </div>
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/island-poster-preview.png" style="width:150px; height:275px">
+        <h4><b>Island poster</b></h4>
+        <div class="caption" style="margin-top: 10px">
+          <p>I designed several football posters for the Ball State Daily news which would run in full-color on home game days. I was responsible for styling the photo and type.</p>
+        <button type="button" class="btn btn-info btn-sm" id="islandBtn">View larger</button>
+            <!-- Baby room modal -->
+            <div class="modal fade" id="island" role="dialog">
+              <div class="modal-dialog">
+              <!-- Baby room large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Baby, have we got a room</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="http://tysonbird.com/portfolio/island-poster.png" style="width:100%">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/lafollette-preview.png" style="width:150px; height:400px">
+        <div class="caption">
+          <h4><b>LaFollette capacity</b></h4>
+          <p>I requested building capacity information from the Ball State housing office to create this graphic comparing the capacity of dorm buildings at Ball State. This accompanied a story about LaFollette Complex where many readers asked, "do we really need this building?"</p>
+        <button type="button" class="btn btn-info btn-sm" id="lafolletteBtn">View larger</button>
+            <!-- For the birds modal -->
+            <div class="modal fade" id="lafollette" role="dialog">
+              <div class="modal-dialog">
+              <!-- Birds large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">The necessity of LaFollette Complex</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="http://tysonbird.com/portfolio/lafollette.png" style="width:100%">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-4" style="margin-top: 10px">
+        <img src="http://tysonbird.com/portfolio/tuition-TEMP-preview.png" style="width:230px; height:150px">
+        <div class="caption">
+          <h4><b>Tuition comparison</b></h4>
+          <p>I researched and compared the cost of in- and out-of-state tuition at Ball State with other major universities for an issue of Ball Bearings, the campus magazine. I was responsible for all research, fact-checking and illustration work.</p>
+        <button type="button" class="btn btn-info btn-sm" id="tuitionBtn">View larger</button>
+            <!-- Easter modal -->
+            <div class="modal fade" id="tuition" role="dialog">
+              <div class="modal-dialog">
+              <!-- Easter large view-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Tuition comparison</h4>
+                  </div>
+                  <div class="modal-body">
+                    <img src="http://tysonbird.com/portfolio/tuition-TEMP.png" style="width:100%">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+<hr>
+<span class="footer" style="text-align: center">Design and content &copy; 2016 Tyson Bird</span>
+<hr>
+</div>  <!-- Ends container -->
+
 
 <script>
 $(document).ready(function(){
@@ -133,6 +689,24 @@ $(document).ready(function(){
     $("#hoppingBtn").click(function(){
         $("#hoppingTraditions").modal();
     });
+      $("#hoopfestBtn").click(function(){
+        $("#hoopfest").modal();
+    });  
+      $("#heylmanBtn").click(function(){
+        $("#heylman").modal();
+    });  
+      $("#disciplineBtn").click(function(){
+        $("#discipline").modal();
+    });  
+      $("#islandBtn").click(function(){
+        $("#island").modal();
+    });  
+      $("#lafolletteBtn").click(function(){
+        $("#lafollette").modal();
+    });  
+      $("#tuitionBtn").click(function(){
+        $("#tuition").modal();
+    });  
 });
 </script>
 </body>
